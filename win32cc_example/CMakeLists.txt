@@ -9,7 +9,7 @@ include_directories ( BEFORE ${CMAKE_SOURCE_DIR}/src )
 set ( CMAKE_CXX_FLAGS
       "-std=c++0x -pedantic -Wall -Werror -Wconversion -Wextra -Wno-unused" )
 
-include ( Win32CrossCompilation )
+include ( Win32CC )
 
 #
 # Compilation 
