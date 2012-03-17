@@ -5,7 +5,10 @@ set ( CMAKE_SYSTEM_NAME Windows )
 ##########################
 ##      System root     ##
 ##########################
-find_path ( CMAKE_FIND_ROOT_PATH "bin" "/usr/i686-pc-mingw32/sys-root/mingw" )
+find_path (
+            CMAKE_FIND_ROOT_PATH "bin"
+            "/usr/i686-pc-mingw32/sys-root/mingw" # Fedora 15
+          )
 
 if ( CMAKE_FIND_ROOT_PATH EQUAL CMAKE_FIND_ROOT_PATH-NOTFOUND )
 
@@ -35,15 +38,4 @@ set ( CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER )
 set ( CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY )
 set ( CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY )
 
-##########################
-##         Misc         ##
-##########################
-execute_process ( COMMAND "${MINGW_PREFIX}-gcc" "-dumpversion"
-                  OUTPUT_VARIABLE GCC_VERSION )
-
-string ( REGEX REPLACE "(.+)\\.(.+)\\.(.+)" "\\1\\2" GCC_VERSION_COMPACT ${GCC_VERSION} )
-
-set ( Boost_COMPILER -gcc${GCC_VERSION_COMPACT} )
-
-add_definitions ( "-D__CYGWIN__" )
 

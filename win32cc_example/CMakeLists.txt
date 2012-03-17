@@ -4,12 +4,14 @@ project ( win32-cross-compile-example )
 
 set ( CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/../ )
 
+include ( Win32CC )
+
 include_directories ( BEFORE ${CMAKE_SOURCE_DIR}/src )
 
 set ( CMAKE_CXX_FLAGS
       "-std=c++0x -pedantic -Wall -Werror -Wconversion -Wextra -Wno-unused" )
 
-include ( Win32CC )
+do_extra_win32_configuration ()
 
 #
 # Compilation 
@@ -28,4 +30,10 @@ target_link_libraries ( example ${Boost_LIBRARIES} )
 enable_testing() 
 
 add_subdirectory ( test )
+
+do_extra_win32_test_configuration ( 
+  WIN32_LD_LIBRARY_PATH "${CMAKE_CURRENT_BINARY_DIR}/test"
+  TEST_TARGETS example_test 
+)
+
 
