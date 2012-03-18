@@ -37,7 +37,7 @@ Provides ``github_include`` macro that works like ``include`` but it downloads
 the macro from github if it's not present in the local file system.
 
 Just include ``SuperInclude.cmake`` and call the provided macros (see the
- [example](https://github.com/daniperez/CMakeLists.txt/tree/master/super_include_example) ).
+ [example](https://github.com/daniperez/CMakeLists.txt/blob/master/super_include_example/CMakeLists.txt)).
 
 In [SuperInclude.cmake](https://github.com/daniperez/CMakeLists.txt/blob/master/SuperInclude.cmake) you can find
 the available macros.
