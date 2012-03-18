@@ -1,8 +1,8 @@
 Available scripts
 =================
 
-1.  SuperInclude
-2.  Win32 Application Cross-Compilation
+1.  **SuperInclude**
+2.  **Win32 Application Cross-Compilation**
 
 All the scripts are found in this folder. Examples of usage can be found
 in the corresponding subfolders.
