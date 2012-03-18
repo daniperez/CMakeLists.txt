@@ -12,9 +12,6 @@
 # To do:
 # 
 #   - check MD5 signatures if found in the repo.
-#   - it would be great if github_include were github_include
-#     and avoid this way always having to include the module.
-#     We do this way because include is scope sensitive. 
 # 
 # Dani Perez (c) 2012
 # 
