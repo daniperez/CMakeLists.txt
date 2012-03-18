@@ -1,14 +1,14 @@
 # - Includes a CMake script found in a github repository. The script
-# is downloaded only if it's not already found locally. 
-#
+# is downloaded only if it's not already present. 
+# 
 # The parameters to be supplied are:
-#
+# 
 #   USER            Github user.
 #
 #   REPO            Github repository.
-#
+# 
 #   PATH_TO_SCRIPT  Path to the script file in Github repository.
-#
+# 
 # To do:
 #
 #   - check MD5 signatures if found in the repo.
@@ -17,7 +17,7 @@
 #     We do this way because include is scope sensitive. 
 # 
 # Dani Perez (c) 2012
-#
+# 
 macro ( github_include USER REPO PATH_TO_SCRIPT )
 
   set ( url "https://raw.github.com/${USER}/${REPO}/master/${PATH_TO_SCRIPT}" )
@@ -72,3 +72,4 @@ macro ( github_include USER REPO PATH_TO_SCRIPT )
   include ( ${module_filename_we} )
 
 endmacro()
+
