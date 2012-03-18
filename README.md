@@ -31,6 +31,8 @@ Several scripts are provided which can be used together or individually.
 3.  ``FindWine.cmake``: used by ``Win32CC.cmake`` script to check if
     Wine is present. If it is, WINE_FOUND and WINE_CMD are set accordingly.
 
+You can find an example [here](https://github.com/daniperez/CMakeLists.txt/blob/master/win32cc_example/CMakeLists.txt))
+
 # Super Include
 
 Provides ``github_include`` macro that works like ``include`` but it downloads
