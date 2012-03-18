@@ -6,8 +6,7 @@ set ( CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/../ )
 
 include ( SuperInclude )
 
-github_download ( "daniperez" "CMakeLists.txt" "super_include_example/DummyModule.cmake" )
-include ( DummyModule )
+github_include ( "daniperez" "CMakeLists.txt" "super_include_example/DummyModule.cmake" )
 
 if ( DummyVariable )
 

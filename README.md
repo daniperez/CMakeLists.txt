@@ -33,14 +33,11 @@ Several scripts are provided which can be used together or individually.
 
 # Super Include
 
-The original idea was to provide a ``github_include`` macro that would allow to 
-include scripts located in github.com (or bitbucket.org or wherever). Since
-``include`` has parent scope, that didn't work and I had to content myself with
-a macro that would download the module to a local folder and set module path's accordingly.
+Provides ``github_include`` macro that works like ``include`` but it downloads
+the macro from github if it's not present in the local file system.
 
-Just include ``SuperInclude.cmake`` and call the provided macros. After 
-using SuperInclude, you'll still have to do an ``include`` of your module
-(see the [example](https://github.com/daniperez/CMakeLists.txt/tree/master/super_include_example) ).
+Just include ``SuperInclude.cmake`` and call the provided macros (see the
+ [example](https://github.com/daniperez/CMakeLists.txt/tree/master/super_include_example) ).
 
 In [SuperInclude.cmake](https://github.com/daniperez/CMakeLists.txt/blob/master/SuperInclude.cmake) you can find
 the available macros.
