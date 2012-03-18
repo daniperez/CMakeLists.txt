@@ -13,9 +13,9 @@ set ( CMAKE_CXX_FLAGS
 
 do_extra_win32_configuration ()
 
-#
+# 
 # Compilation 
-#
+# 
 find_package ( Boost 1.40.0 REQUIRED COMPONENTS date_time )
 
 include_directories ( ${Boost_INCLUDE_DIRS} )
@@ -24,9 +24,9 @@ add_library ( example SHARED "src/boost_time.cpp" )
 
 target_link_libraries ( example ${Boost_LIBRARIES} )
 
-#
+# 
 # Testing
-#
+# 
 enable_testing() 
 
 add_subdirectory ( test )
