@@ -4,6 +4,8 @@ Available scripts
 1.  **SuperInclude**
 2.  **Win32 Application Cross-Compilation**
 
+![CMake logo] (http://www.cmake.org/opensourcelogos/cmake100.png)
+
 All the scripts are found in this folder. Examples of usage can be found
 in the corresponding subfolders.
 
