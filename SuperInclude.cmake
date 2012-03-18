@@ -1,5 +1,5 @@
-# - Includes a CMake script found in a github repository. The script
-# is downloaded if it's not already found locally. 
+# - Downloads a CMake script found in a github repository. The script
+# is downloaded only if it's not already found locally. 
 #
 # The parameters to be supplied are:
 #
@@ -8,10 +8,17 @@
 #   REPO            Github repository.
 #
 #   PATH_TO_SCRIPT  Path to the script file in Github repository.
+#
+# To do:
+#
+#   - check MD5 signatures if found in the repo.
+#   - it would be great if github_download were github_include
+#     and avoid this way always having to include the module.
+#     We do this way because include is scope sensitive. 
 # 
 # Dani Perez (c) 2012
 #
-function ( github_include USER REPO PATH_TO_SCRIPT )
+function ( github_download USER REPO PATH_TO_SCRIPT )
 
   set ( url "https://raw.github.com/${USER}/${REPO}/master/${PATH_TO_SCRIPT}" )
 
@@ -40,7 +47,6 @@ function ( github_include USER REPO PATH_TO_SCRIPT )
 
     message ( STATUS "SuperInclude -- Downloading ${url}" )
 
-    # TODO: implement MD5 sum check.
     file ( DOWNLOAD "${url}" "${destination}"
            STATUS status
            SHOW_PROGRESS )
@@ -60,8 +66,7 @@ function ( github_include USER REPO PATH_TO_SCRIPT )
 
   endif ()
 
-  list ( APPEND CMAKE_MODULE_PATH ${destination_dir} )
+  set ( CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH};${destination_dir}" PARENT_SCOPE )
   list ( REMOVE_DUPLICATES CMAKE_MODULE_PATH )
-  include ( ${module_filename_we} )
 
 endfunction()

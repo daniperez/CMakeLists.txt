@@ -1,1 +1,1 @@
-set ( DummyVariable TRUE )
+set ( DummyVariable TRUE CACHE INTERNAL "test string" )
