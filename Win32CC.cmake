@@ -34,6 +34,7 @@ endfunction()
 #                          with ';' or ':'. Tests in 'check' target will be
 #                          executed with this path and CMAKE_FIND_ROOT_PATH/bin,
 #                          added by default.
+# 
 #   TEST_TARGETS           This targets  will be added as a dependency to 'check'
 #                          target.
 #  
@@ -62,7 +63,7 @@ function (
     if ( WINE_FOUND )
 
       if ( win32_library_path )
-        string( REPLACE ";" ":" WIN32_LD_LIBRARY_PATH_STR ${win32_library_path} )
+        string( REPLACE ":" ";" WIN32_LD_LIBRARY_PATH_STR "${CMAKE_FIND_ROOT_PATH}/bin/;${win32_library_path}" )
       endif()
 
       # Cross-testing win32 tests in linux works if .exe is omitted (otherwise tests
@@ -73,11 +74,11 @@ function (
 
       add_custom_target (
         check
-        COMMAND WINEPATH=${CMAKE_FIND_ROOT_PATH}/bin/:${WIN32_LD_LIBRARY_PATH_STR} ${CMAKE_CTEST_COMMAND} --output-on-failure
+        COMMAND env "WINEPATH=\"${WIN32_LD_LIBRARY_PATH_STR}\"" ${CMAKE_CTEST_COMMAND} --output-on-failure
       )
 
       message ( STATUS "Win32CC -- Added 'check' target with the following Windows PATH: " )
-      foreach ( folder ${CMAKE_FIND_ROOT_PATH}/bin ${WIN32_LD_LIBRARY_PATH_STR} )
+      foreach ( folder ${WIN32_LD_LIBRARY_PATH_STR} )
 
         message ( STATUS "Win32CC --  - ${folder}" )
       

@@ -32,7 +32,7 @@ enable_testing()
 add_subdirectory ( test )
 
 win32cc_test_configuration ( 
-  WIN32_LD_LIBRARY_PATH "${CMAKE_CURRENT_BINARY_DIR}/test"
+  WIN32_LD_LIBRARY_PATH "${CMAKE_CURRENT_BINARY_DIR}"
   TEST_TARGETS example_test 
 )
 
