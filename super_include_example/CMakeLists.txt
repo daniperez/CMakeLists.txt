@@ -4,7 +4,11 @@ cmake_minimum_required ( VERSION 2.6 )
 set ( CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/../ )
 include ( SuperInclude )
 
-github_include ( "daniperez" "CMakeLists.txt" "super_include_example/DummyModule.cmake" )
+github_include ( 
+  USER    "daniperez"
+  PROJECT "CMakeLists.txt"
+  PATH    "super_include_example/DummyModule.cmake"
+)
 
 if ( DummyVariable )
 

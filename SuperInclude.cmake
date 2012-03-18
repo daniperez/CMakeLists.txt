@@ -3,11 +3,11 @@
 # 
 # The parameters to be supplied are:
 # 
-#   USER            Github user.
+#   USER  Github user.
 # 
-#   REPO            Github repository.
+#   REPO  Github repository.
 # 
-#   PATH_TO_SCRIPT  Path to the script file in Github repository.
+#   PATH  Path to the script file in Github repository.
 # 
 # To do:
 # 
@@ -18,9 +18,9 @@
 # 
 # Dani Perez (c) 2012
 # 
-macro ( github_include USER REPO PATH_TO_SCRIPT )
+macro ( github_include USER _user REPO _repo PATH _path )
 
-  set ( url "https://raw.github.com/${USER}/${REPO}/master/${PATH_TO_SCRIPT}" )
+  set ( url "https://raw.github.com/${_user}/${_repo}/master/${_path}" )
 
   set ( HOME "$ENV{HOME}" )
 
@@ -38,8 +38,8 @@ macro ( github_include USER REPO PATH_TO_SCRIPT )
 
   endif ()
 
-  get_filename_component ( module_filename    "${PATH_TO_SCRIPT}" NAME )
-  get_filename_component ( module_filename_we "${PATH_TO_SCRIPT}" NAME_WE )
+  get_filename_component ( module_filename    "${_path}" NAME )
+  get_filename_component ( module_filename_we "${_path}" NAME_WE )
 
   set ( destination "${destination_dir}/${module_filename}" )
 
