@@ -1,11 +1,11 @@
-# - This macro does some post-configuration in addition to
-#    Windows-mingw-i686.cmake toolchain file. Namely:
-#
+# - This macro does some post-configuration not carried out by the
+# toolchain file (Windows-mingw-i686.cmake). Namely:
+# 
 #      i.  Sets Boost_COMPILER, otherwise find_package ( Boost ) won't work.
 #      ii. Sets some preprocessor symbols for Boost::Process (highscore's version). 
-#
+# 
 # Dani Perez (c) 2012
-#
+# 
 function ( do_extra_win32_configuration )
 
   if ( CMAKE_CROSSCOMPILING AND WIN32 )
@@ -27,18 +27,18 @@ function ( do_extra_win32_configuration )
 endfunction()
 
 # - If Wine is found, adds a 'check' target.
-#
+#  
 # The parameters to be supplied are:
-#
+# 
 #   WIN32_LD_LIBRARY_PATH  Extra folders to add to Wine's PATH, separated 
 #                          with ';' or ':'. Tests in 'check' target will be
 #                          executed with this path and CMAKE_FIND_ROOT_PATH/bin,
 #                          added by default.
 #   TEST_TARGETS           This targets  will be added as a dependency to 'check'
 #                          target.
-#
+#  
 # Dani Perez (c) 2012
-#
+#  
 function ( 
   do_extra_win32_test_configuration  
     WIN32_LD_LIBRARY_PATH win32_library_path
