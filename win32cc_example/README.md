@@ -7,7 +7,9 @@ system.
 
 The code is in ```src``` folder and a contrived unit test can be
 found in ```test```. Both the code and the test can be cross-compiled
-for Win32 and, thanks to the Wine magic, even tested.
+for Win32 and, thanks to the Wine magic, even tested. Have a look
+at [CMakeLists.txt](https://github.com/daniperez/CMakeLists.txt/blob/master/win32cc_example/CMakeLists.txt)
+for a quick start.
 
 Example compilation & testing
 -----------------------------

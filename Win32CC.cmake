@@ -61,7 +61,7 @@ function (
 
     if ( WINE_FOUND )
 
-      if ( WIN32_LD_LIBRARY_PATH )
+      if ( win32_library_path )
         string( REPLACE ";" ":" WIN32_LD_LIBRARY_PATH_STR ${win32_library_path} )
       endif()
 

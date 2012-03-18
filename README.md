@@ -6,10 +6,7 @@ CMake tooling for cross-compilation is quite good but still there
 are some few variables and targets that can be defined for a better
 user experience.
 
-Scripts
--------
-
-I wrote several scripts that can be used together or individually.
+Several scripts are provided which can be used together or individually.
 
 1.  ``Win32CC.cmake``: main script. In order to use it, include it
    in your CMake script:
@@ -30,6 +27,3 @@ I wrote several scripts that can be used together or individually.
 
 3.  ``FindWine.cmake``: used by ``Win32CC.cmake`` script to check if
     Wine is present. If it is, WINE_FOUND and WINE_CMD are set accordingly.
-
-Dani.
-~              
