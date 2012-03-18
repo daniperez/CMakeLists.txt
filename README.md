@@ -9,7 +9,8 @@ in the corresponding subfolders.
 
 * * *
 
-# SuperInclude
+1. SuperInclude
+===============
 
 Provides ``github_include`` macro that works like ``include`` but it downloads
 the macro from github if it's not present in the local file system.
@@ -19,7 +20,8 @@ Just include ``SuperInclude.cmake`` and call the macro (see the
 In [SuperInclude.cmake](https://github.com/daniperez/CMakeLists.txt/blob/master/SuperInclude.cmake) you can find
 the available macros.
 
-# Win32 Application Cross-Compilation
+2. Win32 Application Cross-Compilation
+======================================
 
 CMake tooling for cross-compilation is quite good but still there
 are some corners to polish.
