@@ -6,7 +6,7 @@
 # 
 # Dani Perez (c) 2012
 # 
-function ( do_extra_win32_configuration )
+function ( win32cc_configuration )
 
   if ( CMAKE_CROSSCOMPILING AND WIN32 )
 
@@ -40,7 +40,7 @@ endfunction()
 # Dani Perez (c) 2012
 #  
 function ( 
-  do_extra_win32_test_configuration  
+  win32cc_test_configuration  
     WIN32_LD_LIBRARY_PATH win32_library_path
     TEST_TARGETS          test_targets 
 )

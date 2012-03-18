@@ -11,7 +11,7 @@ include_directories ( BEFORE ${CMAKE_SOURCE_DIR}/src )
 set ( CMAKE_CXX_FLAGS
       "-std=c++0x -pedantic -Wall -Werror -Wconversion -Wextra -Wno-unused" )
 
-do_extra_win32_configuration ()
+win32cc_configuration ()
 
 # 
 # Compilation 
@@ -31,7 +31,7 @@ enable_testing()
 
 add_subdirectory ( test )
 
-do_extra_win32_test_configuration ( 
+win32cc_test_configuration ( 
   WIN32_LD_LIBRARY_PATH "${CMAKE_CURRENT_BINARY_DIR}/test"
   TEST_TARGETS example_test 
 )
