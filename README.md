@@ -1,4 +1,10 @@
-Some useful CMake scripts written by me. Enjoy it!
+Available scripts
+=================
+
+1.  Win32 Application Cross-Compilation
+2.  SuperInclude
+
+* * *
 
 # Win32 Application Cross-Compilation
 
@@ -33,7 +39,7 @@ Several scripts are provided which can be used together or individually.
 
 You can find an example [here](https://github.com/daniperez/CMakeLists.txt/blob/master/win32cc_example/CMakeLists.txt).
 
-# Super Include
+# SuperInclude
 
 Provides ``github_include`` macro that works like ``include`` but it downloads
 the macro from github if it's not present in the local file system.
