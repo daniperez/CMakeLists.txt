@@ -1,11 +1,11 @@
 Available scripts
 =================
 
+<a href="http://cmake.org"><img alt="CMake logo" src="http://www.cmake.org/opensourcelogos/cmake100.png" align="right"/></a>
+
 1.  **SuperInclude**
 2.  **Win32 Application Cross-Compilation**
 
-![CMake logo] (http://www.cmake.org/opensourcelogos/cmake100.png)
-<a href="http://cmake.org"><img alt="CMake logo" src="http://www.cmake.org/opensourcelogos/cmake100.png" align="right"/></a>
 All the scripts are found in this folder. Examples of usage can be found
 in the corresponding subfolders.
 
