@@ -15,7 +15,7 @@ Several scripts are provided which can be used together or individually.
 
         include ( Win32CC )
 
-   In [Win32CC.cmake](https://github.com/daniperez/CMakeLists.txt/Win32CC.cmake) you can find
+   In [Win32CC.cmake](https://github.com/daniperez/CMakeLists.txt/blob/master/Win32CC.cmake) you can find
    the available macros.
 
 2.  ``Windows-mingw-i686.cmake``: toolchain file. This is the only 
@@ -42,6 +42,6 @@ Just include ``SuperInclude.cmake`` and call the provided macros. After
 using SuperInclude, you'll still have to do an ``include`` of your module
 (see the [example](https://github.com/daniperez/CMakeLists.txt/tree/master/super_include_example) ).
 
-In [SuperInclude.cmake](https://github.com/daniperez/CMakeLists.txt/SuperInclude.cmake) you can find
+In [SuperInclude.cmake](https://github.com/daniperez/CMakeLists.txt/blob/master/SuperInclude.cmake) you can find
 the available macros.
 
