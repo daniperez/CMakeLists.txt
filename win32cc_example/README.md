@@ -1,7 +1,7 @@
 Cross-compiling and cross-testing for Win32 platform
 ====================================================
 
-This folder contains an example on how using CMake, Wine and Mingw
+This folder contains an example on how to use CMake, Wine and Mingw
 to develop an application for Win32 without leaving your POSIX
 system.
 
@@ -19,7 +19,7 @@ Example compilation & testing
 > cd build
 > cmake ../
 > make
-> make test
+> make check
 ```
 
 If you didn't check out the full [daniperez/CMakeLists.txt](https://github.com/daniperez/CMakeLists.txt)

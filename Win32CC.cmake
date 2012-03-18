@@ -26,7 +26,7 @@ function ( do_extra_win32_configuration )
 
 endfunction()
 
-# If Wine is found, adds a 'check' target.
+# - If Wine is found, adds a 'check' target.
 #
 # The parameters to be supplied are:
 #
