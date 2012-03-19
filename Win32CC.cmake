@@ -48,7 +48,7 @@ function (
 
   if ( CMAKE_CROSSCOMPILING AND WIN32 )
 
-    find_package ( WINE )
+    find_package ( Wine )
 
     if ( WINE_FOUND )
 
