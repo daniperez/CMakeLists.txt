@@ -16,7 +16,6 @@ in the corresponding subfolders.
 
 Provides ``github_include`` macro that works like ``include`` but it downloads
 the macro from github if it's not present in the local file system.
-
 Just include ``SuperInclude.cmake`` and call the macro (see the
  [example](https://github.com/daniperez/CMakeLists.txt/blob/master/super_include_example/CMakeLists.txt)).
 You can find the available macros in [SuperInclude.cmake](https://github.com/daniperez/CMakeLists.txt/blob/master/SuperInclude.cmake).
@@ -24,7 +23,7 @@ You can find the available macros in [SuperInclude.cmake](https://github.com/dan
 2 - Win32 Application Cross-Compilation
 =======================================
 
-The following scripts can be used together or individually:
+This script is split in a functional basis. They can be used together or individually:
 
 1.  ``Win32CC.cmake``: main script. In order to use it, include it
     in your CMake script:
