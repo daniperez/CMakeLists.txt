@@ -5,9 +5,10 @@ set ( CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/../ )
 include ( SuperInclude )
 
 github_include ( 
-  USER    "daniperez"
-  PROJECT "CMakeLists.txt"
-  PATH    "super_include_example/DummyModule.cmake"
+  USER   "daniperez"
+  REPO   "CMakeLists.txt"
+  BRANCH "v0.1.0"
+  PATH   "super_include_example/DummyModule.cmake"
 )
 
 if ( DummyVariable )

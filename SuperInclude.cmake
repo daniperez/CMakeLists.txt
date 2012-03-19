@@ -1,23 +1,49 @@
+include ( CMakeParseArguments )
 # - Includes a CMake script found in a github repository. The script
 # is downloaded only if it's not already present. 
 # 
 # The parameters to be supplied are:
 # 
-#   USER  Github user.
+#   USER    Github user (required).
 # 
-#   REPO  Github repository.
+#   REPO    Github repository (required).
 # 
-#   PATH  Path to the script file in Github repository.
+#   BRANCH  Github branch or tag (optional but highly recommended
+#           since default master branch is subject to change).
+# 
+#   PATH    Path to the script file in Github repository (required)
 # 
 # To do:
-# 
+#
+#   - support Bitbucket. 
 #   - check MD5 signatures if found in the repo.
 # 
+# Requires parse_arguments.cmake macro. Install it along with
+# SuperInclude.cmake.
+#
 # Dani Perez (c) 2012
-# 
-macro ( github_include USER _user REPO _repo PATH _path )
+#
+macro ( github_include )
 
-  set ( url "https://raw.github.com/${_user}/${_repo}/master/${_path}" )
+  cmake_parse_arguments ( GITHUB "" "USER;REPO;PATH;BRANCH" "" ${ARGN} )
+
+  if ( NOT GITHUB_USER )
+    message ( FATAL_ERROR "SuperInclude -- USER not supplied." )
+  endif () 
+  if ( NOT GITHUB_REPO )
+    message ( FATAL_ERROR "SuperInclude -- REPO not supplied." )
+  endif () 
+  if ( NOT GITHUB_PATH )
+    message ( FATAL_ERROR "SuperInclude -- PATH not supplied." )
+  endif () 
+
+  if ( NOT GITHUB_BRANCH )
+    set ( ACTUAL_GITHUB_BRANCH "master" )
+  else()
+    set ( ACTUAL_GITHUB_BRANCH "${GITHUB_BRANCH}" )
+  endif () 
+
+  set ( url "https://raw.github.com/${GITHUB_USER}/${GITHUB_REPO}/${ACTUAL_GITHUB_BRANCH}/${GITHUB_PATH}" )
 
   set ( HOME "$ENV{HOME}" )
 
@@ -35,8 +61,8 @@ macro ( github_include USER _user REPO _repo PATH _path )
 
   endif ()
 
-  get_filename_component ( module_filename    "${_path}" NAME )
-  get_filename_component ( module_filename_we "${_path}" NAME_WE )
+  get_filename_component ( module_filename    "${GITHUB_PATH}" NAME )
+  get_filename_component ( module_filename_we "${GITHUB_PATH}" NAME_WE )
 
   set ( destination "${destination_dir}/${module_filename}" )
 
