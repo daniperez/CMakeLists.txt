@@ -5,6 +5,7 @@ Available scripts
 
 1.  **SuperInclude**
 2.  **Win32 Application Cross-Compilation**
+3.  **CMakeIvy**
 
 All the scripts are found in this folder. Examples of usage can be found
 in the corresponding subfolders.
@@ -50,3 +51,14 @@ This script is split in a functional basis. They can be used together or individ
 
     You can find an example [here](https://github.com/daniperez/CMakeLists.txt/blob/master/win32cc_example/CMakeLists.txt).
 
+3 - CMakeIvy
+============
+
+**cmake-ivy** provides a mean of loading Ivy artifacts in a CMake project.
+
+Just include ``ivy.cmake`` and call the macros. 
+You can find the available macros in [ivy.cmake](https://github.com/daniperez/CMakeLists.txt/blob/master/ivy.cmake)
+(see the [example](https://github.com/daniperez/CMakeLists.txt/blob/master/cmake_ivy_example/CMakeLists.txt)).
+
+Note: **parse_arguments.cmake:** is needed by ivy.cmake. I didn't write it.
+Furnished with ivy.cmake for convenience. 
