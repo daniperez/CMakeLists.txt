@@ -18,8 +18,8 @@ in the corresponding subfolders.
 Provides ``github_include`` macro that works like ``include`` but it downloads
 the macro from github if it's not present in the local file system.
 Just include ``SuperInclude.cmake`` and call the macro (see the
- [example](https://github.com/daniperez/CMakeLists.txt/blob/master/super_include_example/CMakeLists.txt)).
-You can find the available macros in [SuperInclude.cmake](https://github.com/daniperez/CMakeLists.txt/blob/master/SuperInclude.cmake).
+ [example](https://github.com/daniperez/CMakeLists.txt/blob/master/super_include/example/CMakeLists.txt)).
+You can find the available macros in [SuperInclude.cmake](https://github.com/daniperez/CMakeLists.txt/blob/master/super_include/SuperInclude.cmake).
 
 2 - Win32 Application Cross-Compilation
 =======================================
@@ -33,7 +33,7 @@ This script is split in a functional basis. They can be used together or individ
 
         include ( Win32CC )
 
-    Find in [Win32CC.cmake](https://github.com/daniperez/CMakeLists.txt/blob/master/Win32CC.cmake)
+    Find in [Win32CC.cmake](https://github.com/daniperez/CMakeLists.txt/blob/master/win32cc/Win32CC.cmake)
     the available macros. The macros set some variables that help at cross-compiling and
     cross-testing (i.e. testing Windows binaries in a POSIX system).
 
@@ -49,7 +49,7 @@ This script is split in a functional basis. They can be used together or individ
 3.  ``FindWine.cmake``: used by ``Win32CC.cmake`` to check if
     Wine is present. If it is, WINE_FOUND and WINE_CMD are set accordingly.
 
-    You can find an example [here](https://github.com/daniperez/CMakeLists.txt/blob/master/win32cc_example/CMakeLists.txt).
+    You can find an example [here](https://github.com/daniperez/CMakeLists.txt/blob/master/win32cc/example/CMakeLists.txt).
 
 3 - CMakeJar
 ==============
@@ -59,9 +59,9 @@ when you need to use a dependency released in a Maven repository in your CMake
 project (e.g. a XML configuration file,...). It also contains a macro to
 unjar a jar.
 
-Just include [jar.cmake](https://github.com/daniperez/CMakeLists.txt/blob/master/jar.cmake) and call the macros
+Just include [jar.cmake](https://github.com/daniperez/CMakeLists.txt/blob/master/cmake_jar/jar.cmake) and call the macros
 found there
-(see the [example](https://github.com/daniperez/CMakeLists.txt/blob/master/cmake_jar_example/CMakeLists.txt)).
+(see the [example](https://github.com/daniperez/CMakeLists.txt/blob/master/cmake_jar/example/CMakeLists.txt)).
 
-Note: [parse_arguments.cmake](https://github.com/daniperez/CMakeLists.txt/blob/master/parse_arguments.cmake)
+Note: [parse_arguments.cmake](https://github.com/daniperez/CMakeLists.txt/blob/master/cmake_jar/parse_arguments.cmake)
 is needed by jar.cmake. I didn't write it.
