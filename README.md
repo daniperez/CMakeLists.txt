@@ -54,9 +54,9 @@ This script is split in a functional basis. They can be used together or individ
 3 - CMakeJar
 ==============
 
-Provides a mean of loading jars from a Maven repository. This can be useful
+Provides a mean of loading files from Maven repository files. This can be useful
 when you need to use a dependency released in a Maven repository in your CMake
-project (e.g. a XML configuration file, ...). It also contains a macro to
+project (e.g. a XML configuration file,...). It also contains a macro to
 unjar a jar.
 
 Just include [jar.cmake](https://github.com/daniperez/CMakeLists.txt/blob/master/jar.cmake) and call the macros
