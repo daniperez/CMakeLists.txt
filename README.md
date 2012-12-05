@@ -5,7 +5,7 @@ Available scripts
 
 1.  **SuperInclude**
 2.  **Win32 Application Cross-Compilation**
-3.  **CMakeIvy**
+3.  **CMakeJar**
 
 All the scripts are found in this folder. Examples of usage can be found
 in the corresponding subfolders.
@@ -51,14 +51,17 @@ This script is split in a functional basis. They can be used together or individ
 
     You can find an example [here](https://github.com/daniperez/CMakeLists.txt/blob/master/win32cc_example/CMakeLists.txt).
 
-3 - CMakeIvy
-============
+3 - CMakeJar
+==============
 
-**cmake-ivy** provides a mean of loading Ivy artifacts in a CMake project.
+Provides a mean of loading jars from a Maven repository. This can be useful
+when you need to use a dependency released in a Maven repository in your CMake
+project (e.g. a XML configuration file, ...). It also contains a macro to
+unjar a jar.
 
-Just include ``ivy.cmake`` and call the macros. 
-You can find the available macros in [ivy.cmake](https://github.com/daniperez/CMakeLists.txt/blob/master/ivy.cmake)
-(see the [example](https://github.com/daniperez/CMakeLists.txt/blob/master/cmake_ivy_example/CMakeLists.txt)).
+Just include [jar.cmake](https://github.com/daniperez/CMakeLists.txt/blob/master/jar.cmake) and call the macros
+found there
+(see the [example](https://github.com/daniperez/CMakeLists.txt/blob/master/cmake_jar_example/CMakeLists.txt)).
 
-Note: **parse_arguments.cmake:** is needed by ivy.cmake. I didn't write it.
-Furnished with ivy.cmake for convenience. 
+Note: [parse_arguments.cmake](https://github.com/daniperez/CMakeLists.txt/blob/master/parse_arguments.cmake)
+is needed by jar.cmake. I didn't write it.

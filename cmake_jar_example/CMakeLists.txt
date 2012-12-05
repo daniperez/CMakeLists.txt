@@ -4,7 +4,7 @@ project ( Example )
 
 set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR} )
 
-include ( ivy )
+include ( jar )
 
 init_ivy ( REQUIRED )
 

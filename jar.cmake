@@ -66,10 +66,10 @@ macro ( init_ivy )
 endmacro ()
 
 #
-# get_ivy_artifact - Retrieves the given file from the given artifact
+# get_artifact - Retrieves the given file from the given artifact
 # or module.
 #
-#   macro get_ivy_artifact ( file
+#   macro get_artifact ( file
 #                            ORGANIZATION  organization
 #                            MODULE_NAME   module_name
 #                            REVISION      revision
@@ -85,9 +85,9 @@ endmacro ()
 # file with the settings for the resolvers, caches and so on (see
 # http://ant.apache.org/ivy/history/latest-milestone/settings.html ).
 #
-macro ( get_ivy_artifact file )
+macro ( get_artifact file )
 
-   get_ivy_artifact_process_parameters (  _IVY_GET ${ARGN} )
+   get_artifact_process_parameters (  _IVY_GET ${ARGN} )
 
    if ( EXISTS "${IVY_TMP_FOLDER}/${_IVY_GET_MODULE_FILE}" )
 
@@ -158,15 +158,15 @@ macro ( init_ivy_process_parameters PREFIX )
 endmacro ()
 
 #
-# get_ivy_artifact_process_parameters - Parses the arguments for get_ivy_artifact.
+# get_artifact_process_parameters - Parses the arguments for get_artifact.
 # Private method, not meant to be used by final user.
 #
-#  get_ivy_artifact_process_parameters ( PREFIX [parameters...] )
+#  get_artifact_process_parameters ( PREFIX [parameters...] )
 #
 # It will process any PARAMETERS passed to the macro and it will set
 # some variables prefixed by PREFIX.
 # 
-macro  ( get_ivy_artifact_process_parameters PREFIX )
+macro  ( get_artifact_process_parameters PREFIX )
 
   if ( IVY_INIT_DONE )
 
@@ -220,7 +220,7 @@ macro ( ivy_resolve )
 
   if ( EXISTS "${IVY_TMP_FOLDER}/${_IVY_GET_MODULE_NAME}.jar" ) 
 
-    message ( STATUS "CMAKE-IVY: Skipping resolve, ${_IVY_RES_PKG_ORG}.${_IVY_RES_PKG_NAME}-${_IVY_RES_PKG_REV} is already there, I'm lazy enough to not downloading it twice." )
+    message ( STATUS "CMAKE-IVY: Skipping resolve, ${_IVY_RES_PKG_ORG}.${_IVY_RES_PKG_NAME}-${_IVY_RES_PKG_REV} is already there, I'm lazy enough not to download it twice." )
 
   else ()
 

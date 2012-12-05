@@ -1,7 +1,7 @@
-CMakeIvy
+CMakeJar
 ========
 
-This folder contains an example on how to use the CMakeIvy module.
+This folder contains an example on how to use the CMakeJar module.
 
 Example compilation & testing
 -----------------------------
