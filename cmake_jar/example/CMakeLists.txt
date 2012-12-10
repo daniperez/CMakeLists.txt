@@ -2,7 +2,7 @@ cmake_minimum_required ( VERSION 2.6 )
 
 project ( Example )
 
-set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR} )
+set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/ ${PROJECT_SOURCE_DIR}/../ )
 
 include ( jar )
 
