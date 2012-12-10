@@ -149,12 +149,6 @@ macro ( init_ivy_process_parameters PREFIX )
     endif ()
   endif ()
 
-  if ( NOT DEFINED JAVA_HOME )
-
-      message ( FATAL_ERROR "CMAKE-IVY: A proper Java JDK was not found. Did you set JAVA_HOME?" )
-
-  endif () 
-
 endmacro ()
 
 #
@@ -174,12 +168,6 @@ macro  ( get_artifact_process_parameters PREFIX )
 
   endif () 
  
-  if ( NOT DEFINED JAVA_HOME )
-
-    message ( FATAL_ERROR "CMAKE-IVY: JAVA_HOME not defined" )
-  
-  endif ()
-
   parse_arguments ( ${PREFIX} "ORGANIZATION;MODULE_NAME;REVISION;MODULE_FILE;CONFIG_FILE" "" ${ARGN} )
 
   if ( 0 )
@@ -190,14 +178,17 @@ macro  ( get_artifact_process_parameters PREFIX )
     message ( "${PREFIX}_CONFIG_FILE  = ${${PREFIX}_CONFIG_FILE}" )
   endif ()
 
-  if ( WIN32 )
-    set ( java "${JAVA_HOME}/bin/java.exe" )
-    set ( jar  "${JAVA_HOME}/bin/jar.exe" )
-  else () 
-    set ( java "${JAVA_HOME}/bin/java" )
-    set ( jar  "${JAVA_HOME}/bin/jar" )
-  endif ()
- 
+  find_package ( Java )
+
+  set ( java ${Java_JAVA_EXECUTABLE} )
+  set ( jar  ${Java_JAR_EXECUTABLE} )
+
+  if ( NOT Java_FOUND )
+
+    message ( FATAL_ERROR "CMAKE-IVY: Cannot find a Java JRE installed." )
+  
+  endif()
+
 endmacro ()
 
 #

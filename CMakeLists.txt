@@ -5,6 +5,6 @@ project ( Testing )
 include(ExternalProject)
 
 ExternalProject_Add ( check
-  SOURCE_DIR "cmake_jar/example"
+  SOURCE_DIR "${PROJECT_SOURCE_DIR}/cmake_jar/example"
   PREFIX "cmake_jar" )
   

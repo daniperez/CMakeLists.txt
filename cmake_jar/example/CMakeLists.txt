@@ -11,6 +11,6 @@ include ( jar )
 
 init_ivy ( REQUIRED )
 
-get_ivy_artifact ( dest ORGANIZATION "org.apache.ant" MODULE_NAME "ant" REVISION "1.8.2" MODULE_FILES "META-INF/NOTICE.txt" ) 
+get_artifact ( dest ORGANIZATION "org.apache.ant" MODULE_NAME "ant" REVISION "1.8.2" MODULE_FILES "META-INF/NOTICE.txt" ) 
 
 message ( STATUS "Example: file downloaded to ${dest}" ) 
