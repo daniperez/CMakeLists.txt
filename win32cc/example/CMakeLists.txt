@@ -39,4 +39,5 @@ win32cc_test_configuration (
   TEST_TARGETS example_test 
 )
 
+message ( STATUS "TEST:  Win32CC: success" ) 
 

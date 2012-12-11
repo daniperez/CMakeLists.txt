@@ -14,9 +14,9 @@ ExternalProject_Add ( check-super_include
   PREFIX "super_include" 
   INSTALL_COMMAND "" ) 
 
-#ExternalProject_Add ( check-win32cc
-#  SOURCE_DIR "${PROJECT_SOURCE_DIR}/win32cc/example"
-#  PREFIX "super_include" 
-#  INSTALL_COMMAND "" ) 
+ExternalProject_Add ( check-win32cc
+  SOURCE_DIR "${PROJECT_SOURCE_DIR}/win32cc/example"
+  PREFIX "win32cc" 
+  INSTALL_COMMAND "" ) 
 
   
