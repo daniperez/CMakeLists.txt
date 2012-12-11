@@ -1,19 +1,22 @@
 cmake_minimum_required ( VERSION 2.6 )
 
-# We still need to include SuperInclude as usual
-set ( CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/../ )
+# PROJECT_SOURCE_DIR is needed when executing example in super_include 
+# project isolated and PROJECT_SOURCE_DIR/../ is needed when executing
+# it from the CMakeLists.txt root project.
+set ( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/ ${PROJECT_SOURCE_DIR}/../ )
+
 include ( SuperInclude )
 
 github_include ( 
   USER   "daniperez"
   REPO   "CMakeLists.txt"
-  BRANCH "v0.1.0"
-  PATH   "super_include_example/DummyModule.cmake"
+  PATH   "super_include/example/DummyModule.cmake"
 )
 
+# (DummyModule.cmake defines DummyVariable)
 if ( DummyVariable )
 
-  message ( STATUS "SuperInclude -- Worked!" )
+  message ( STATUS "TEST:  SuperInclude: success" ) 
 
 else ()
 

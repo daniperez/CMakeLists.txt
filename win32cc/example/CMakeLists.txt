@@ -2,7 +2,10 @@ cmake_minimum_required ( VERSION 2.6 )
 
 project ( win32-cross-compile-example )
 
-set ( CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/../ )
+# PROJECT_SOURCE_DIR is needed when executing example in super_include 
+# project isolated and PROJECT_SOURCE_DIR/../ is needed when executing
+# it from the CMakeLists.txt root project.
+set ( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/ ${PROJECT_SOURCE_DIR}/../ )
 
 include ( Win32CC )
 

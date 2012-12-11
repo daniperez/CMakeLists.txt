@@ -183,9 +183,11 @@ macro  ( get_artifact_process_parameters PREFIX )
   set ( java ${Java_JAVA_EXECUTABLE} )
   set ( jar  ${Java_JAR_EXECUTABLE} )
 
-  if ( NOT Java_FOUND )
+  if ( NOT Java_JAVA_EXECUTABLE AND NOT Java_JAR_EXECUTABLE )
 
-    message ( FATAL_ERROR "CMAKE-IVY: Cannot find a Java JRE installed." )
+    message ( FATAL_ERROR "CMAKE-IVY: Cannot find a sane Java JRE installed." )
+    message ( FATAL_ERROR "CMAKE-IVY: java path : ${Java_JAVA_EXECUTABLE}" )
+    message ( FATAL_ERROR "CMAKE-IVY: jar path  : ${Java_JAR_EXECUTABLE}" )
   
   endif()
 

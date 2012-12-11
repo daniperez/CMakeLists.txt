@@ -38,12 +38,12 @@ macro ( github_include )
   endif () 
 
   if ( NOT GITHUB_BRANCH )
-    set ( ACTUAL_GITHUB_BRANCH "master" )
+    set ( ACTUAL_GITHUB_BRANCH "${GITHUB_PATH}" )
   else()
-    set ( ACTUAL_GITHUB_BRANCH "${GITHUB_BRANCH}" )
+    set ( ACTUAL_GITHUB_BRANCH "${GITHUB_BRANCH}/${GITHUB_BRANCH}" )
   endif () 
 
-  set ( url "https://raw.github.com/${GITHUB_USER}/${GITHUB_REPO}/${ACTUAL_GITHUB_BRANCH}/${GITHUB_PATH}" )
+  set ( url "https://raw.github.com/${GITHUB_USER}/${GITHUB_REPO}/${ACTUAL_GITHUB_PATH}" )
 
   set ( HOME "$ENV{HOME}" )
 
