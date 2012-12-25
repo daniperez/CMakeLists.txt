@@ -16,8 +16,8 @@ script:
   - "mkdir build -p"
   - "cd build"
   # Dunno why but I have to define BOOST_ROOT here and in the toolchain file.
-  - "cmake -DBOOST_ROOT=~/.cmake/mingw/$MINGW_ARCH -DCMAKE_TOOLCHAIN_FILE=../toolchain/$TOOLCHAIN_FILE.cmake ../" 
-  - "cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/$TOOLCHAIN_FILE.cmake ../" 
+  - "cmake -DBOOST_ROOT=~/.cmake/mingw/$MINGW_ARCH -DCMAKE_TOOLCHAIN_FILE=../win32cc/$TOOLCHAIN_FILE.cmake ../" 
+  - "cmake -DCMAKE_TOOLCHAIN_FILE=../win32cc/$TOOLCHAIN_FILE.cmake ../" 
   - "make check"
 
 notifications:
