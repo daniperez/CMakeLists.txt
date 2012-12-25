@@ -4,6 +4,7 @@ language: node_js
 #       otherwise I couldn't test Win32CC.cmake.
 
 before_install:
+  - sudo DEBIAN_FRONTEND=noninteractive apt-get update
   - sudo DEBIAN_FRONTEND=noninteractive apt-get -y install cmake
   - sudo DEBIAN_FRONTEND=noninteractive apt-get -y install  mingw-w64 wine gcc-mingw32 gcc-mingw-w64 gfortran-mingw-w64 gcc-mingw-w64-x86-64 gcc-mingw-w64-i686  binutils-mingw-w64-i686 binutils-mingw-w64-x86-64
   - mkdir -p ~/.cmake/
