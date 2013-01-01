@@ -4,9 +4,9 @@ language: node_js
 #       otherwise I couldn't test Win32CC.cmake.
 
 before_install:
-  - sudo DEBIAN_FRONTEND=noninteractive apt-get -qq -y update
-  - sudo DEBIAN_FRONTEND=noninteractive apt-get -qq -y install cmake
-  - sudo DEBIAN_FRONTEND=noninteractive apt-get -qq -y install  mingw-w64 wine gcc-mingw32 gcc-mingw-w64 gfortran-mingw-w64 gcc-mingw-w64-x86-64 gcc-mingw-w64-i686  binutils-mingw-w64-i686 binutils-mingw-w64-x86-64
+  - sudo DEBIAN_FRONTEND=noninteractive apt-get -q -q -y update
+  - sudo DEBIAN_FRONTEND=noninteractive apt-get -q -q -y install cmake
+  - sudo DEBIAN_FRONTEND=noninteractive apt-get -q -q -y install  mingw-w64 wine gcc-mingw32 gcc-mingw-w64 gfortran-mingw-w64 gcc-mingw-w64-x86-64 gcc-mingw-w64-i686  binutils-mingw-w64-i686 binutils-mingw-w64-x86-64
   - mkdir -p ~/.cmake/
   - git clone git://github.com/daniperez/$MINGW_ARCH-boost.git ~/.cmake/mingw/
   - tar xvfj ~/.cmake/mingw/$MINGW_ARCH-boost-1.49.0.tar.bz2 -C ~/.cmake/mingw/ > /dev/null
