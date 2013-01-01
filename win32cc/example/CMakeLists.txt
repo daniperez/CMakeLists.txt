@@ -16,8 +16,6 @@ win32cc_configuration ()
 # 
 # Compilation 
 #
-message ( STATUS "==============> ${BOOST_ROOT}" )
-message ( STATUS "==============> ${CMAKE_TOOLCHAIN_FILE}" )
 find_package ( Boost 1.40.0 REQUIRED COMPONENTS date_time )
 
 include_directories ( ${Boost_INCLUDE_DIRS} )
