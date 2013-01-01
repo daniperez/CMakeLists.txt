@@ -11,9 +11,6 @@ include ( Win32CC )
 
 include_directories ( BEFORE ${CMAKE_SOURCE_DIR}/src )
 
-set ( CMAKE_CXX_FLAGS
-      "-pedantic -Wall -Werror -Wconversion -Wextra -Wno-unused" )
-
 win32cc_configuration ()
 
 # 
