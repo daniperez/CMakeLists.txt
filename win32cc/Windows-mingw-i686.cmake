@@ -10,7 +10,7 @@ IF ( EXISTS "/etc/fedora-release" )
 
 ELSEIF ( EXISTS "/etc/debian_version" )
 
-    SET ( BOOST_ROOT "~/.cmake/mingw/$ENV{MINGW_ARCH}/" CACHE FILEPATH "" )
+    #SET ( BOOST_ROOT "~/.cmake/mingw/$ENV{MINGW_ARCH}/" CACHE FILEPATH "" )
     SET ( Boost_COMPILER "-mgw46" )
 
     IF ( EXISTS "/usr" ) # Put here "if debian natty"
