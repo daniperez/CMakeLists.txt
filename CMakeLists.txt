@@ -14,6 +14,8 @@ ExternalProject_Add ( check-super_include
   PREFIX "super_include" 
   INSTALL_COMMAND "" ) 
 
+message ( STATUS "1==============> ${CMAKE_TOOLCHAIN_FILE}" )
+
 ExternalProject_Add ( check-win32cc
   SOURCE_DIR "${PROJECT_SOURCE_DIR}/win32cc/example"
   CMAKE_ARGS -DBOOST_ROOT=${BOOST_ROOT} -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
