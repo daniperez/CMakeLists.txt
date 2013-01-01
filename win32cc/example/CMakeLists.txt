@@ -19,8 +19,9 @@ win32cc_configuration ()
 # 
 # Compilation 
 #
-message ( STATUS "==============> ${MINGW_SYSROOT}" )
+message ( STATUS "==============> ${BOOST_ROOT}" )
 set ( BOOST_ROOT "~/.cmake/mingw/$ENV{MINGW_ARCH}/" CACHE FILEPATH "" )
+set ( BOOST_LIBRARYDIR "${BOOST_ROOT}/bin/" CACHE FILEPATH "" )
 find_package ( Boost 1.40.0 REQUIRED COMPONENTS date_time )
 
 include_directories ( ${Boost_INCLUDE_DIRS} )
