@@ -1,41 +1,54 @@
+#
+# NOTE: These are distro-dependent. Add your favorite
+#       distro check & config parameters here.
+#
+IF ( EXISTS "/etc/fedora-release" )
+
+    SET ( MINGW_PREFIX   "i686-pc-mingw32" )
+    SET ( MINGW_SYSROOT  "/usr/${MINGW_PREFIX}/sys-root/mingw/" )
+    SET ( Boost_COMPILER "-gcc45" )
+
+ELSEIF ( EXISTS "/etc/debian_version" )
+
+    set ( BOOST_ROOT "~/.cmake/mingw/$ENV{MINGW_ARCH}/" CACHE FILEPATH "" )
+    set ( Boost_COMPILER "-mgw46" )
+
+    IF ( EXISTS "/usr" ) # Put here "if debian natty"
+      IF (CMAKE_SIZEOF_VOID_P MATCHES "8")
+        SET ( MINGW_PREFIX   "amd64-mingw32msvc"     )
+      ELSE ()
+        SET ( MINGW_PREFIX   "i586-mingw32msvc"     )
+      ENDIF ()
+    ELSE()
+      IF (CMAKE_SIZEOF_VOID_P MATCHES "8")
+        SET ( MINGW_PREFIX   "x86_64-w64-mingw32"     )
+      ELSE ()
+        SET ( MINGW_PREFIX   "i686-w64-mingw32"     )
+      ENDIF ()
+    ENDIF ()
+
+    SET ( MINGW_SYSROOT  "/usr/${MINGW_PREFIX};${BOOST_ROOT}" )
+ELSE ()
+    message ( FATAL_ERROR "Unknown host platform" )
+ENDIF()
+
+
+
 include(CMakeForceCompiler)
 
-set ( CMAKE_SYSTEM_NAME Windows )
+SET ( CMAKE_SYSTEM_NAME Windows )
 
-##########################
-##      System root     ##
-##########################
-find_path (
-            CMAKE_FIND_ROOT_PATH "bin"
-            "/usr/i686-pc-mingw32/sys-root/mingw" # Fedora 15
-          )
+ADD_DEFINITIONS ( "-D__CYGWIN__" )
 
-if ( CMAKE_FIND_ROOT_PATH EQUAL "CMAKE_FIND_ROOT_PATH-NOTFOUND" )
+SET ( CMAKE_CXX_FLAGS "-s" CACHE STRING "Release compilation flags" )
+SET ( CMAKE_C_COMPILER ${MINGW_PREFIX}-gcc )
+SET ( CMAKE_FORCE_CXX_COMPILER ${MINGW_PREFIX}-g++ GNU )
+SET ( CMAKE_RC_COMPILER ${MINGW_PREFIX}-windres )
 
-  message ( FATAL_ERROR "Win32CC -- Your platform is not recognized and CMAKE_FIND_ROOT_PATH is not set" ) 
+SET ( CMAKE_FIND_ROOT_PATH ${MINGW_SYSROOT} )
 
-endif () 
-
-##########################
-##      Mingw prefix    ##
-##########################
-string ( REGEX REPLACE "(.*)/(i.*32)/(.*)" "\\2" MINGW_PREFIX ${CMAKE_FIND_ROOT_PATH} )
-
-if ( MINGW_PREFIX STREQUAL CMAKE_FIND_ROOT_PATH )
-
-  message ( FATAL_ERROR "Win32CC -- Prefix not in ${CMAKE_FIND_ROOT_PATH}. Provide 'MINGW_PREFIX' variable with it (e.g. i686-pc-mingw)" )
-
-endif () 
-
-##########################
-##   Compiler paths     ##
-##########################
-set ( CMAKE_C_COMPILER ${MINGW_PREFIX}-gcc )
-set ( CMAKE_FORCE_CXX_COMPILER ${MINGW_PREFIX}-g++ GNU )
-set ( CMAKE_RC_COMPILER ${MINGW_PREFIX}-windres )
-
-set ( CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER )
-set ( CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY )
-set ( CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY )
+SET ( CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER )
+SET ( CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY )
+SET ( CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY )
 
 
