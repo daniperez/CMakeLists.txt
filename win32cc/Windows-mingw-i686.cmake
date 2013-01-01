@@ -10,7 +10,7 @@ find_path (
             "/usr/i686-pc-mingw32/sys-root/mingw" # Fedora 15
           )
 
-if ( CMAKE_FIND_ROOT_PATH EQUAL CMAKE_FIND_ROOT_PATH-NOTFOUND )
+if ( CMAKE_FIND_ROOT_PATH EQUAL "CMAKE_FIND_ROOT_PATH-NOTFOUND" )
 
   message ( FATAL_ERROR "Win32CC -- Your platform is not recognized and CMAKE_FIND_ROOT_PATH is not set" ) 
 
