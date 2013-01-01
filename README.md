@@ -3,8 +3,7 @@ CMakeLists.txt
 
 [![Build Status](https://travis-ci.org/daniperez/CMakeLists.txt.png)](https://travis-ci.org/daniperez/CMakeLists.txt)
 
-Available scripts
------------------
+**Available scripts:**
 
 <a href="http://cmake.org"><img alt="CMake logo" src="http://www.cmake.org/opensourcelogos/cmake100.png" align="right"/></a>
 
