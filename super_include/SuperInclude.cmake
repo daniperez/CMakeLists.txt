@@ -36,14 +36,11 @@ macro ( github_include )
   if ( NOT GITHUB_PATH )
     message ( FATAL_ERROR "SuperInclude -- PATH not supplied." )
   endif () 
-
   if ( NOT GITHUB_BRANCH )
-    set ( ACTUAL_GITHUB_BRANCH "${GITHUB_PATH}" )
-  else()
-    set ( ACTUAL_GITHUB_BRANCH "${GITHUB_BRANCH}/${GITHUB_BRANCH}" )
+    message ( FATAL_ERROR "SuperInclude -- BRANCH not supplied." )
   endif () 
 
-  set ( url "https://raw.github.com/${GITHUB_USER}/${GITHUB_REPO}/${ACTUAL_GITHUB_PATH}" )
+  set ( url "https://raw.github.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${GITHUB_PATH}" )
 
   set ( HOME "$ENV{HOME}" )
 
