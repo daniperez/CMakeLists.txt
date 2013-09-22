@@ -306,7 +306,7 @@ macro ( download URL FILENAME )
 
       set ( error "I couldn't download ${URL}: ${_status_message}" )
 
-      if ( ${REQUIRED} )
+      if ( REQUIRED )
         message ( FATAL_ERROR "CMAKE-IVY: ${error}" )
       else ()
         message ( STATUS "CMAKE-IVY: ${error}" )
