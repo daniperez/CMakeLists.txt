@@ -11,6 +11,7 @@ github_include (
   USER   "daniperez"
   REPO   "CMakeLists.txt"
   PATH   "super_include/example/DummyModule.cmake"
+  BRANCH "master"
 )
 
 # (DummyModule.cmake defines DummyVariable)
