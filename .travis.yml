@@ -21,5 +21,4 @@ script:
   - "make"
 
 notifications:
-  email: true 
-  on_failure: change
+  email: true
