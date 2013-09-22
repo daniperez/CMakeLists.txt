@@ -30,13 +30,13 @@ include ( parse_arguments )
 
 ############################################################################
 ############################################################################
-set ( IVY_TAR_NAME     "apache-ivy-2.2.0-bin.tar.gz"
+set ( IVY_TAR_NAME     "apache-ivy-2.3.0-bin.tar.gz"
       CACHE STRING     "Tarball name of Apache Ivy binary distribution" )
 ############################################################################
-set ( IVY_DOWNLOAD_URL "http://www.apache.org/dist/ant/ivy/2.2.0/${IVY_TAR_NAME}"
+set ( IVY_DOWNLOAD_URL "http://www.apache.org/dist/ant/ivy/2.3.0/${IVY_TAR_NAME}"
       CACHE STRING     "URL of Apache Ivy binary distribution" )
 ############################################################################
-set ( IVY_JAR_NAME     "apache-ivy-2.2.0/ivy-2.2.0.jar"
+set ( IVY_JAR_NAME     "apache-ivy-2.3.0/ivy-2.3.0.jar"
       CACHE STRING     "Jar name of Apache Ivy binary distribution" )
 ############################################################################
 set ( IVY_TMP_FOLDER "${CMAKE_CURRENT_BINARY_DIR}/tmp" 
