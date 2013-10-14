@@ -4,12 +4,11 @@ include ( CMakeParseArguments )
 # 
 # The parameters to be supplied are:
 # 
-#   USER    Github user (required).
+#   USER    Github user (required)
 # 
-#   REPO    Github repository (required).
+#   REPO    Github repository (required)
 # 
-#   BRANCH  Github branch or tag (optional but highly recommended
-#           since default master branch is subject to change).
+#   BRANCH  Github branch or tag  (required)
 # 
 #   PATH    Path to the script file in Github repository (required)
 # 
